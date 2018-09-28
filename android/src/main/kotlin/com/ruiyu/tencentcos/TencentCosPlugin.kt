@@ -31,42 +31,6 @@ class TencentCosPlugin(private val registrar: Registrar, private val channel: Me
                 val localPath = call.argument<String>("localPath")
                 CosUploadFile.upLoadFile(registrar.context(), appid, region, bucket, cosPath, localPath, localCredentialProvider,channel)
 
-
-
-              /*  val localUrl = call.argument<Any>("url").toString()
-                Log.e("TencentCosPlugin", localUrl)
-                val qServiceCfg = QServiceCfg(registrar.context(), call.argument<Any>("region").toString(), call.argument<Any>("appid").toString(), call.argument<Any>("secretId").toString(),
-                        call.argument<Any>("secretKey").toString(), call.argument<Any>("sessionToken").toString(), java.lang.Long.parseLong(call.argument<Any>("expiredTime").toString()), call.argument<Any>("uploadCosPath").toString(), localUrl)
-                val putObjectSample = PutObjectSample(qServiceCfg)
-                putObjectSample.startAsync({ progress, max ->
-                    val data = HashMap<String, Any>()
-                    data["progress"] = progress * 100.0 / max
-                    data["localUrl"] = localUrl
-                    channel.invokeMethod("onProgress", data)
-                    Log.e("TencentCosPlugin", "progress =\$progress%$progress")
-                }, object : CosXmlResultListener {
-                    override fun onSuccess(cosXmlRequest: CosXmlRequest, cosXmlResult: CosXmlResult) {
-                        val data = HashMap<String, Any>()
-                        data["localUrl"] = localUrl
-                        data["url"] = cosXmlResult.accessUrl
-                        channel.invokeMethod("onSuccess", data)
-                        Log.e("TencentCosPlugin", "onSuccess =\$progress%")
-                    }
-
-                    override fun onFail(cosXmlRequest: CosXmlRequest, qcloudException: CosXmlClientException?, qcloudServiceException: CosXmlServiceException) {
-                        val stringBuilder = StringBuilder()
-                        if (qcloudException != null) {
-                            stringBuilder.append(qcloudException.message)
-                        } else {
-                            stringBuilder.append(qcloudServiceException.toString())
-                        }
-                        val data = HashMap<String, Any>()
-                        data["localUrl"] = localUrl
-                        channel.invokeMethod("onFailed", data)
-                        channel.invokeMethod("message", stringBuilder.toString())
-                        Log.e("TencentCosPlugin", "onFailed " + stringBuilder.toString())
-                    }
-                })*/
             }
             else -> result.notImplemented()
         }
