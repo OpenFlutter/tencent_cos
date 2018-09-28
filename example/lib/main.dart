@@ -5,7 +5,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:tencent_cos/tencent_cos.dart';
-import 'package:image_picker/image_picker.dart';
+//import 'package:image_picker/image_picker.dart';
 
 void main() => runApp(new MyApp());
 
@@ -25,8 +25,8 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    File image = await ImagePicker.pickImage(source: ImageSource.gallery);
-    print("abc" + image.path);
+//    File image = await ImagePicker.pickImage(source: ImageSource.gallery);
+//    print("abc" + image.path);
 
     TencentCos.uploadByFile(
         "ap-beijing",
@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
         "ae7048f4b802e7efc12aae8242a068ddf5c7817430001",
         "1538105499",
         "pic/dynamic/video_dynamic/1/5.png",
-        image.path);
+        "本地图片的路径");
     TencentCos.setMethodCallHandler(_handleMessages);
   }
 
