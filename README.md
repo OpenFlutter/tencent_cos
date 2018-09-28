@@ -42,10 +42,11 @@ void upload() async {
 '''
 
   
-具体参数参看腾讯cos ,下面3个参数是后台传递过来的,用于鉴权和加密
+具体参数参看腾讯cos ,下面4个参数是后台传递过来的,用于鉴权和加密
  * String secretId,
  * String secretKey,
  * String sessionToken,
+ * String expiredTime,
  
 后台鉴权代码在example里的android StorageSts.java里面,代码分为上半段,和下半段,上半段是设置自己的cos的密钥等信息,下半段是生成上面参数的json串
 
