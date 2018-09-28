@@ -44,6 +44,13 @@ class _MyAppState extends State<MyApp> {
   Future<Null> _handleMessages(MethodCall call) async {
     print(call.method);
     print(call.arguments);
+    if(call.method == "onProgress"){
+
+    }else if(call.method == "onFailed"){
+
+    }else if(call.method == "onSuccess"){
+
+    }
   }
 
   @override
