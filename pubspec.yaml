@@ -1,6 +1,6 @@
 name: tencent_cos
 description: 腾讯云cos插件,用于上传图片
-version: 0.0.3
+version: 0.0.4
 author: zhangruiyu <157418979@qq.com>
 homepage: https://github.com/zhangruiyu/tencent_cos
 
