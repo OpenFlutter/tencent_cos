@@ -29,7 +29,7 @@ class TencentCosPlugin(private val registrar: Registrar, private val channel: Me
                 val bucket = call.argument<String>("bucket")
                 val cosPath = call.argument<String>("cosPath")
                 val localPath = call.argument<String>("localPath")
-                CosUploadFile.upLoadFile(registrar.context(), appid, region, bucket, cosPath, localPath, localCredentialProvider,channel)
+                CosUploadFile.upLoadFile(registrar.context(), appid!!, region!!, bucket!!, cosPath!!, localPath!!, localCredentialProvider,channel)
 
             }
             else -> result.notImplemented()
