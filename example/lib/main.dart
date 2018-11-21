@@ -1,17 +1,14 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:tencent_cos/tencent_cos.dart';
-//import 'package:image_picker/image_picker.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -25,43 +22,33 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-//    File image = await ImagePicker.pickImage(source: ImageSource.gallery);
-//    print("abc" + image.path);
-
-    TencentCos.uploadByFile(
-        "ap-beijing",
-        "1253631018",
-        "barber-1253631018",
-        "AKIDalNaS49sWdG5nYGojvx4xvvY3C6MCcUk",
-        "jh7Cx3QGwdcZJNmd70cxlEIJ0WmMAWDU",
-        "ae7048f4b802e7efc12aae8242a068ddf5c7817430001",
-        "1538105499",
-        "pic/dynamic/video_dynamic/1/5.png",
-        "本地图片的路径");
-    TencentCos.setMethodCallHandler(_handleMessages);
-  }
-
-  Future<Null> _handleMessages(MethodCall call) async {
-    print(call.method);
-    print(call.arguments);
-    if(call.method == "onProgress"){
-
-    }else if(call.method == "onFailed"){
-
-    }else if(call.method == "onSuccess"){
-
+    String platformVersion;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+//      platformVersion = await TencentCos.platformVersion;
+    } on PlatformException {
+      platformVersion = 'Failed to get platform version.';
     }
+
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) return;
+
+    setState(() {
+      _platformVersion = platformVersion;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: new Center(
-          child: new Text('Running on: $_platformVersion\n'),
+        body: Center(
+          child: Text('Running on: $_platformVersion\n'),
         ),
       ),
     );

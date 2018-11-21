@@ -1,7 +1,5 @@
 PODS:
   - Flutter (1.0.0)
-  - image_picker (0.0.1):
-    - Flutter
   - QCloudCore (5.5.2)
   - QCloudCOSXML (5.5.2):
     - QCloudCore (= 5.5.2)
@@ -14,7 +12,6 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
-  - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - tencent_cos (from `.symlinks/plugins/tencent_cos/ios`)
 
 SPEC REPOS:
@@ -25,18 +22,15 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: ".symlinks/flutter/ios"
-  image_picker:
-    :path: ".symlinks/plugins/image_picker/ios"
   tencent_cos:
     :path: ".symlinks/plugins/tencent_cos/ios"
 
 SPEC CHECKSUMS:
   Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
-  image_picker: ee00aab0487cedc80a304085219503cc6d0f2e22
   QCloudCore: b91a762d280f0a80cc6f537fd186ac43a4a3025e
   QCloudCOSXML: a30ab17f45b0cbbcbb218a3677298498e8748a22
-  tencent_cos: 35e81f9bbe3282e834e8bff1b1499eaae6828210
+  tencent_cos: 93850300f1cba6abd94456a65d85401c6f154e77
 
-PODFILE CHECKSUM: 1e5af4103afd21ca5ead147d7b81d06f494f51a2
+PODFILE CHECKSUM: aff02bfeed411c636180d6812254b2daeea14d09
 
 COCOAPODS: 1.5.3

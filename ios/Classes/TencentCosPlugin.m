@@ -22,9 +22,9 @@
 - (id)initWithChannel:(FlutterMethodChannel *)channel;
 {
     if (self = [super init]) {
-        
+
         self.channel = channel;
-        
+
     }
     return self;
 }
@@ -40,28 +40,28 @@
         NSString *region = self.arguments[@"region"];
         NSString *cosPath = self.arguments[@"cosPath"];
         NSString *bucket = self.arguments[@"bucket"];
-        
-        
+
+
         QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
         configuration.appID = appid;
-        
+
         configuration.signatureProvider = self;
         QCloudCOSXMLEndPoint* endpoint = [[QCloudCOSXMLEndPoint alloc] init];
         endpoint.regionName = region;//服务地域名称，可用的地域请参考注释
         configuration.endpoint = endpoint;
-        
+
         [QCloudCOSXMLService registerDefaultCOSXMLWithConfiguration:configuration];
         [QCloudCOSTransferMangerService registerDefaultCOSTransferMangerWithConfiguration:configuration];
-        
+
         //上传文件
         QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
-        
-        
+
+
         put.object = cosPath;
         put.bucket = bucket;
         put.body =  url;/*文件的URL*/;
         [put setSendProcessBlock:^(int64_t bytesSent, int64_t totalBytesSent, int64_t totalBytesExpectedToSend) {
-    
+
             NSLog(@"upload %lld totalSend %lld aim %lld", bytesSent, totalBytesSent, totalBytesExpectedToSend);
             NSMutableDictionary *data = [NSMutableDictionary dictionary];
             [data setValue:urlstr forKey:@"localPath" ];
@@ -82,13 +82,13 @@
                 [data setValue: error.domain forKey:@"message"];
                 [self.channel invokeMethod:@"onFailed" arguments:data];
             }
-            
+
         }];
         [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
-        
-        
+
+
     }else {
-        
+
         result(FlutterMethodNotImplemented);
     }
 }

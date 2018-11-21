@@ -41,6 +41,10 @@ void upload() async {
   }
 '''
 
+###android在build.gradle里添加
+ maven {
+            url "https://dl.bintray.com/tencentqcloudterminal/maven"
+ }
   
 具体参数参看腾讯cos ,下面4个参数是后台传递过来的,用于鉴权和加密
  * String secretId,

@@ -4,9 +4,9 @@
 Pod::Spec.new do |s|
   s.name             = 'tencent_cos'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin.'
+  s.summary          = 'A new Flutter project.'
   s.description      = <<-DESC
-A new Flutter plugin.
+A new Flutter project.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
@@ -16,7 +16,7 @@ A new Flutter plugin.
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.dependency 'QCloudCOSXML'
-  
+
   s.ios.deployment_target = '8.0'
 end
 
