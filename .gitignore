@@ -8,3 +8,5 @@ pubspec.lock
 build/
 /tencent_cos_android.iml
 /tencent_cos.iml
+
+.idea/
