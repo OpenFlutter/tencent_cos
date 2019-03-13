@@ -26,11 +26,11 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/tencent_cos/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
   QCloudCore: b91a762d280f0a80cc6f537fd186ac43a4a3025e
   QCloudCOSXML: a30ab17f45b0cbbcbb218a3677298498e8748a22
-  tencent_cos: 93850300f1cba6abd94456a65d85401c6f154e77
+  tencent_cos: e9f00a02054d13f1ef93e79b59ae28ca3c08e892
 
 PODFILE CHECKSUM: aff02bfeed411c636180d6812254b2daeea14d09
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

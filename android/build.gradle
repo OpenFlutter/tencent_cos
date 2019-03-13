@@ -31,7 +31,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -46,6 +46,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.tencent.qcloud:cosxml:5.4.17'
+    implementation 'com.tencent.qcloud:cosxml:5.4.19'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
