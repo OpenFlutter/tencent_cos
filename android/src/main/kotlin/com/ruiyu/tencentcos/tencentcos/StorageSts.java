@@ -1,4 +1,4 @@
-
+package com.ruiyu.tencentcos.tencentcos;
 //
 //val config = TreeMap<String, Any>()
 //// 您的 SecretID
