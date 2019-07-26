@@ -78,8 +78,10 @@
             [data setValue:cosPath forKey:@"cosPath"];
             if(error.code == 0){
                 [self.channel invokeMethod:@"onSuccess" arguments:data];
+                result(@"onSuccess");
             }else{
                 [data setValue: error.domain forKey:@"message"];
+                result(FlutterMethodNotImplemented);
                 [self.channel invokeMethod:@"onFailed" arguments:data];
             }
 

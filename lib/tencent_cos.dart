@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 class TencentCos {
   static const MethodChannel _channel = const MethodChannel('tencent_cos');
 
-  static Future<Map<String, dynamic>> uploadByFile(
+  static Future<dynamic> uploadByFile(
       String region,
       String appid,
       String bucket,
@@ -15,7 +15,7 @@ class TencentCos {
       expiredTime,
       String cosPath,
       String localPath) {
-    return _channel.invokeMapMethod<String, dynamic>('TencentCos.uploadFile', {
+    return _channel.invokeMethod<dynamic>('TencentCos.uploadFile', {
       'region': region,
       'appid': appid,
       'bucket': bucket,
